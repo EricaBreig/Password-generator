@@ -5,28 +5,33 @@ var nunber = "1234567890";
 var special = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 var zalgo =  "Ã̸͖͛B̵̡̬̗̍C̶̰̗̳̠͍̈̆̀͒͗D̶̹̖̤̩͍́͂Ę̷͔̲͈͉̕̚F̵̨͍̯͉̹̿̈́G̷͈͘͝H̴͔̜̊ͅI̷̛̠̤͓͐͑̅͝J̸͉̈̓́Ḳ̷̊̇̑͠Ĺ̴͔̲̫̖͗͂Ṃ̸̳̞̀͒N̶̩̄͝Ö̶̻͉̌̐Ṗ̶̡̻̖̝͈́̕͘͝Q̴̢̈́̀̐͝R̶̙̤̳̩͍̽͗̈́̽Ş̴̜̣̔̊T̵̬͈̟͇͝Ṵ̴̭͔̭̀V̷̭͉̞͍̉̏̌̀̒W̶͕̗̖̹͂̾̈́͜Ẋ̴̨͇̤̼̯̓̎͋̉Y̶͍̳͌̽Z̴̢̳̖̀̒̌̈́a̷͙̹̫̝͚͝b̴̥͉̈́͠c̷̲͙̍͘͜͝d̸͓̋̒̔̿ê̶̮̦̜̙͜f̸̻̓͆́g̷̦̭͑h̴̜̝̤̬̉͜į̸̤̃͑j̶̢̧͈̖̈́̀́k̸͖̠͍̾͂̃̏l̷̨̟͇̜̑̒ͅm̷̗͕̬͙̻̆̈͘ņ̴͍̭̦͔̋̓̀͘o̴̯͎̪͈͔̕p̸̡͚̦̔q̷̻̰̂͝r̵̢͛̕ś̴̞t̵̳̿͊̈ų̵̮̺͎͎̄v̵͎̪̻̅͗w̶̙̮̞̃̋̀̃ẍ̶̨̖̞̝́͋̅̋̽y̷̲̆̒͒̓̚ẑ̷̧͖͇̟̹͆͝";
 
-//Password Character length input.  Validates if it is between 8 and 128 characters.
-var passLength = {
-  lowerLength: false,
-  upperLength: false,
-  numberLength: false,
-  specialLength: false,
-  validCharacterLength: false,
-  validType: false,
-  length = 8,
-}
-function validPassLength(password) {
-  if (password.length >= 8 && password.length <= 128) {
-    password.validCharacterLength = true;
-    lenErrorDiv.style.display = "none";
-  } else {
-    if (!passwordInpt.validCharacterLength) {
-      lenErrorDiv.style.display = "block";
+
+
+// //Object: Password Character length input.  Validates if it is between 8 and 128 characters.
+function generatePassword() {
+
+var passwordLength = window.prompt("Choose length of password between 8 and 128 characters.");
+    if ((passwordLength >= 8) && (passwordLength <= 128)) {
+        console.log("Awesome, it's between 8 and 128, yo");
+    } else if (passwordLength === null) {
+        alert("Nah? Okie, dokie, some other time, brah");
+        return;
+    } else {
+        alert("Nah, dawg. It has to be a number between 8 and 128...Please try again!");
     }
-    password.validLength = false;
+
+var passwordType = window.alert ("What types of characters would you like to use?");
+window.confirm ("Would you like uppercase letters?")
+    if (passwordType){ 
+      window.confirm ("Would you like lowercase letters?")
+
+    }
+
+
   }
-}
-// Assignment Code
+
+
+// Assignment Code - Established Query Selectors
 var generateBtn = document.querySelector("#generate");
 passwordText = document.querySelector("#password");
 
@@ -43,14 +48,20 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //============================================
+//Do I want capital letters
+//Do I want lowercase letters
+//do I want numbers
+//do i want special characters
+//do I want ZALGO
+
 
 // function passwordOptionAll() {
 //   var text = "";
 //   var possible =
 //     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@][/^_`{|}~";
 
-//   for (var i = 0; i < 8; i++)
-//     text += possible.charAt(Math.floor(Math.random() * possible.length));
+  for (var i = 0; i < passwordLength.length; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
 
 //   return text;
 // }
@@ -60,20 +71,25 @@ generateBtn.addEventListener("click", writePassword);
 // console.log(passwordOption());
 
 /// ===========================================Z A L G O
-function zalgo() {
-  var text = "";
-  var possible = "Ã̸͖͛B̵̡̬̗̍C̶̰̗̳̠͍̈̆̀͒͗D̶̹̖̤̩͍́͂Ę̷͔̲͈͉̕̚F̵̨͍̯͉̹̿̈́G̷͈͘͝H̴͔̜̊ͅI̷̛̠̤͓͐͑̅͝J̸͉̈̓́Ḳ̷̊̇̑͠Ĺ̴͔̲̫̖͗͂Ṃ̸̳̞̀͒N̶̩̄͝Ö̶̻͉̌̐Ṗ̶̡̻̖̝͈́̕͘͝Q̴̢̈́̀̐͝R̶̙̤̳̩͍̽͗̈́̽Ş̴̜̣̔̊T̵̬͈̟͇͝Ṵ̴̭͔̭̀V̷̭͉̞͍̉̏̌̀̒W̶͕̗̖̹͂̾̈́͜Ẋ̴̨͇̤̼̯̓̎͋̉Y̶͍̳͌̽Z̴̢̳̖̀̒̌̈́a̷͙̹̫̝͚͝b̴̥͉̈́͠c̷̲͙̍͘͜͝d̸͓̋̒̔̿ê̶̮̦̜̙͜f̸̻̓͆́g̷̦̭͑h̴̜̝̤̬̉͜į̸̤̃͑j̶̢̧͈̖̈́̀́k̸͖̠͍̾͂̃̏l̷̨̟͇̜̑̒ͅm̷̗͕̬͙̻̆̈͘ņ̴͍̭̦͔̋̓̀͘o̴̯͎̪͈͔̕p̸̡͚̦̔q̷̻̰̂͝r̵̢͛̕ś̴̞t̵̳̿͊̈ų̵̮̺͎͎̄v̵͎̪̻̅͗w̶̙̮̞̃̋̀̃ẍ̶̨̖̞̝́͋̅̋̽y̷̲̆̒͒̓̚ẑ̷̧͖͇̟̹͆͝";
-  for (var i = 0; i < 8; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+// function zalgo() {
+//   var text = "";
+//   var possible = "Ã̸͖͛B̵̡̬̗̍C̶̰̗̳̠͍̈̆̀͒͗D̶̹̖̤̩͍́͂Ę̷͔̲͈͉̕̚F̵̨͍̯͉̹̿̈́G̷͈͘͝H̴͔̜̊ͅI̷̛̠̤͓͐͑̅͝J̸͉̈̓́Ḳ̷̊̇̑͠Ĺ̴͔̲̫̖͗͂Ṃ̸̳̞̀͒N̶̩̄͝Ö̶̻͉̌̐Ṗ̶̡̻̖̝͈́̕͘͝Q̴̢̈́̀̐͝R̶̙̤̳̩͍̽͗̈́̽Ş̴̜̣̔̊T̵̬͈̟͇͝Ṵ̴̭͔̭̀V̷̭͉̞͍̉̏̌̀̒W̶͕̗̖̹͂̾̈́͜Ẋ̴̨͇̤̼̯̓̎͋̉Y̶͍̳͌̽Z̴̢̳̖̀̒̌̈́a̷͙̹̫̝͚͝b̴̥͉̈́͠c̷̲͙̍͘͜͝d̸͓̋̒̔̿ê̶̮̦̜̙͜f̸̻̓͆́g̷̦̭͑h̴̜̝̤̬̉͜į̸̤̃͑j̶̢̧͈̖̈́̀́k̸͖̠͍̾͂̃̏l̷̨̟͇̜̑̒ͅm̷̗͕̬͙̻̆̈͘ņ̴͍̭̦͔̋̓̀͘o̴̯͎̪͈͔̕p̸̡͚̦̔q̷̻̰̂͝r̵̢͛̕ś̴̞t̵̳̿͊̈ų̵̮̺͎͎̄v̵͎̪̻̅͗w̶̙̮̞̃̋̀̃ẍ̶̨̖̞̝́͋̅̋̽y̷̲̆̒͒̓̚ẑ̷̧͖͇̟̹͆͝";
+//   for (var i = 0; i < 8; i++)
+//     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-  return text;
-}
+//   return text;
+// }
 
-var password = zalgo();
-console.log(password);
+// var password = zalgo();
+// console.log(password);
 
 //NOTES ===========
 //prompt lets you enter in stuff
 //confirm asks you to select cancel or ok
 //  if (parseInt(askPasswordLength) >= 8 && parseInt(askPasswordLength) <= 128) {
 //   askPasswordLength = askPasswordLength;
+
+
+// HOW TO CALL LE CHILDRENS  
+// var poop = document.body.children(0).children(2);
+ // console.log(poop)
