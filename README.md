@@ -1,4 +1,4 @@
-# Homework Assignment 3 - Password generator
+# Password generator
 
 ## Deployed page URL
 [Password Generator](https://ericabreig.github.io/hw-3-pwd-generator/)
